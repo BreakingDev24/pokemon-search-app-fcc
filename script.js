@@ -2,8 +2,8 @@
 
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
-const statsElement = document.getElementsByTagName('td')
 
+const statsText = document.querySelectorAll('td:nth-child(2)')
 const pokeUrl = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon'
 
 
@@ -15,7 +15,7 @@ const fetchData = async () =>{
         const data = await res.json()
         console.log(data)
         showPokemon(data)
-        
+        searchInput.value = ""
     } catch (err){
 
     }
@@ -68,7 +68,22 @@ const showPokemon = (data)=>{
         return `
         <span class='${name} type-span'>${name}</span>
         `
-    }).join("")
+    }).join("");
+
+    console.log(stats)
+
+    stats.map((item)=>{
+        console.log(item)
+        const {base_stat, stat} = item
+        const {name} = stat
+
+        statsText.forEach((element)=>{
+            if(element.id === name){
+                element.textContent = base_stat
+            }
+        })
+        console.log(name)
+    })
 }
 
 searchButton.addEventListener('click', (e) => {
@@ -77,3 +92,4 @@ searchButton.addEventListener('click', (e) => {
     fetchData()
 })
 
+console.log(statsText)
