@@ -33,6 +33,21 @@ const getType = (types) => {
         <span class='${name} type-span'>${name}</span>
         `
     }).join("");
+};
+
+const getStats = (stats) => {
+    stats.map((item)=>{
+        console.log(item)
+        const {base_stat, stat} = item
+        const {name} = stat
+
+        statsText.forEach((element)=>{
+            if(element.id === name){
+                element.textContent = base_stat
+            }
+        })
+        console.log(name)
+    })
 }
 
 const showPokemon = (data)=>{
@@ -74,19 +89,8 @@ const showPokemon = (data)=>{
     getType(types)
 
     console.log(stats)
-
-    stats.map((item)=>{
-        console.log(item)
-        const {base_stat, stat} = item
-        const {name} = stat
-
-        statsText.forEach((element)=>{
-            if(element.id === name){
-                element.textContent = base_stat
-            }
-        })
-        console.log(name)
-    })
+    getStats(stats)
+    
 }
 
 searchButton.addEventListener('click', (e) => {
