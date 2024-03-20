@@ -16,7 +16,7 @@ const fetchData = async () =>{
         showPokemon(data)
         // searchInput.value = ""
     } catch (err){
-
+        alert("Pokémon not found")
     }
 }
 
@@ -78,7 +78,7 @@ const showPokemon = (data)=>{
     const {front_default} = sprites
     const spriteContainer = document.getElementById('sprite-container');
     spriteContainer.innerHTML = `
-    <img class='sprite-img' src='${front_default}' alt='${name}'>`
+    <img id='sprite' class='sprite-img' src='${front_default}' alt='${name}'>`
 
     //show type
     getType(types)
