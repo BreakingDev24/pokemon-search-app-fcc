@@ -13,7 +13,6 @@ const fetchData = async () =>{
         const userInput = searchInput.value.toLowerCase()
         const res = await fetch(`${pokeUrl}/${userInput}`);
         const data = await res.json()
-        console.log(data)
         showPokemon(data)
         // searchInput.value = ""
     } catch (err){
@@ -27,7 +26,6 @@ const getType = (types) => {
     typesContainer.innerHTML = types.map((item)=>{
         const {type} = item;
         const {name} = type
-        console.log(name)
 
         return `
         <span class='${name} type-span'>${name}</span>
@@ -37,7 +35,6 @@ const getType = (types) => {
 
 const getStats = (stats) => {
     stats.map((item)=>{
-        console.log(item)
         const {base_stat, stat} = item
         const {name} = stat
 
@@ -46,7 +43,6 @@ const getStats = (stats) => {
                 element.textContent = base_stat
             }
         })
-        console.log(name)
     })
 }
 
@@ -65,7 +61,6 @@ const showPokemon = (data)=>{
     //show name
     const pokeName = document.getElementById('pokemon-name');
     pokeName.textContent = name.toUpperCase()
-    console.log(name)
     
     //show id
     
@@ -88,7 +83,7 @@ const showPokemon = (data)=>{
     //show type
     getType(types)
 
-    console.log(stats)
+    //show stats
     getStats(stats)
     
 }
@@ -99,4 +94,3 @@ searchButton.addEventListener('click', (e) => {
     fetchData()
 })
 
-console.log(statsText)
