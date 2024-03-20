@@ -14,7 +14,7 @@ const fetchData = async () =>{
         const res = await fetch(`${pokeUrl}/${userInput}`);
         const data = await res.json()
         showPokemon(data)
-        // searchInput.value = ""
+        searchInput.value = ""
     } catch (err){
         alert("Pokémon not found")
     }
