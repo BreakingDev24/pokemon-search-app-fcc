@@ -15,12 +15,25 @@ const fetchData = async () =>{
         const data = await res.json()
         console.log(data)
         showPokemon(data)
-        searchInput.value = ""
+        // searchInput.value = ""
     } catch (err){
 
     }
 }
-fetchData()
+
+const getType = (types) => {
+    const typesContainer = document.getElementById('types');
+
+    typesContainer.innerHTML = types.map((item)=>{
+        const {type} = item;
+        const {name} = type
+        console.log(name)
+
+        return `
+        <span class='${name} type-span'>${name}</span>
+        `
+    }).join("");
+}
 
 const showPokemon = (data)=>{
     const {
@@ -58,17 +71,7 @@ const showPokemon = (data)=>{
     <img class='sprite-img' src='${front_default}' alt='${name}'>`
 
     //show type
-    const typesContainer = document.getElementById('types');
-
-    typesContainer.innerHTML = types.map((item)=>{
-        const {type} = item;
-        const {name} = type
-        console.log(name)
-
-        return `
-        <span class='${name} type-span'>${name}</span>
-        `
-    }).join("");
+    getType(types)
 
     console.log(stats)
 
