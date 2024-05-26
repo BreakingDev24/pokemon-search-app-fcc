@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 30px;
+    gap: 40px;
+
+    background-color: rgb(138, 138, 130);
+}
+
+.pokedex-container {
+    background-color: rgb(175, 57, 57);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+
+
+}
+
+.search-form {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form > label{
+    align-self: center;
+}
+
+.show-pkmn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#search-input {
+    height: 30px;
+    width:200px;
+}
+
+#search-button {
+    padding: 5px;
+    font-weight: bold;
+    background-color: rgb(92, 92, 233);
+
+    border-radius: 5px;
+
+}
+
+.pkmn-id-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    width: 90%;
+    padding: 10px;
+    background-color: rgba(101, 121, 101, 0.911);
+}
+
+.name-and-id{
+    height: 30px;
+}
+
+#pokemon-name{
+    font-weight: bold;
+}
+
+.size{
+    height: 20px;
+}
+
+#sprite-container{
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sprite-img{
+    width: 50%;
+}
+
+#types{
+    height: 30px;
+    text-transform: uppercase;
+}
+
+.type-span {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.water{
+    background-color: aqua;
+}
+
+.fire{
+    background-color: rgb(235, 69, 39);
+}
+
+.grass{
+    background-color: rgb(32, 150, 28);
+}
+
+.poison{
+    background-color: blueviolet;
+}
+
+.pkmn-stats{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(92, 92, 233);
+}
+
+tr{
+    border-bottom: 5px solid white
+}
+
+th, td{
+    padding: 10px;
+}
